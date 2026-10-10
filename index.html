@@ -1,314 +1,443 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8f5ef">
-  <meta name="description" content="Official website of Thrikkunathu Sehiyon Jacobite Syrian Church, Kunnackal, coming soon.">
-  <title>Website Under Construction | Thrikkunathu Sehiyon Church</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #172c43;
-      --gold: #b38a43;
-      --cream: #f8f5ef;
-      --muted: #657184;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: "DM Sans", sans-serif;
-      color: var(--navy);
-      background: var(--cream);
-    }
-
-    .page {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 55px 7%;
-      isolation: isolate;
-    }
-
-    .church-background {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(248,245,239,0.99) 0%,
-          rgba(248,245,239,0.96) 37%,
-          rgba(248,245,239,0.77) 56%,
-          rgba(248,245,239,0.12) 100%
-        ),
-        linear-gradient(
-          0deg,
-          rgba(248,245,239,0.88),
-          transparent 36%
-        ),
-        url("https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=2000&q=85")
-        center / cover no-repeat;
-    }
-
-    .content {
-      width: 100%;
-      max-width: 780px;
-      text-align: center;
-      padding: 20px 0 95px;
-    }
-
-    .emblem {
-      width: 92px;
-      height: 92px;
-      border: 1px solid rgba(179,138,67,0.5);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 22px;
-      color: var(--gold);
-      font-size: 49px;
-      background: rgba(255,255,255,0.5);
-    }
-
-    .malayalam {
-      font-family: "Noto Sans Malayalam", sans-serif;
-      font-weight: 600;
-      font-size: clamp(18px, 2.2vw, 24px);
-      line-height: 1.8;
-    }
-
-    .church-name {
-      font-family: "Playfair Display", serif;
-      text-transform: uppercase;
-      font-size: clamp(21px, 2.5vw, 29px);
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-top: 8px;
-    }
-
-    .church-location {
-      font-family: "Playfair Display", serif;
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-top: 5px;
-      color: var(--muted);
-    }
-
-    .ornament {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 17px;
-      margin: 27px auto;
-      color: var(--gold);
-      font-size: 27px;
-    }
-
-    .ornament span {
-      height: 1px;
-      width: 65px;
-      background: var(--gold);
-    }
-
-    .gear {
-      display: block;
-      font-size: 62px;
-      color: var(--gold);
-      margin-bottom: 12px;
-      animation: turn 18s linear infinite;
-    }
-
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(34px, 5vw, 55px);
-      line-height: 1.18;
-      font-weight: 600;
-      letter-spacing: -1px;
-    }
-
-    .message {
-      max-width: 580px;
-      margin: 18px auto 0;
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--muted);
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 24px;
-      border: 1px solid rgba(179,138,67,0.45);
-      border-radius: 50px;
-      padding: 10px 17px;
-      background: rgba(255,255,255,0.58);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #b38a43;
-      animation: pulse 1.8s infinite;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 25px;
-      left: 7%;
-      right: 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      border-top: 1px solid rgba(23,44,67,0.14);
-      padding-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: var(--navy);
-      font-weight: 600;
-    }
-
-    @keyframes turn {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes pulse {
-      50% { opacity: 0.35; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .page {
-        min-height: 100svh;
-        padding: 35px 22px 120px;
-      }
-
-      .church-background {
-        background:
-          linear-gradient(
-            180deg,
-            rgba(248,245,239,0.82),
-            rgba(248,245,239,0.96) 48%,
-            rgba(248,245,239,0.99)
-          ),
-          url("https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1000&q=85")
-          center / cover no-repeat;
-      }
-
-      .content {
-        padding: 0;
-      }
-
-      .emblem {
-        width: 76px;
-        height: 76px;
-        font-size: 40px;
-        margin-bottom: 20px;
-      }
-
-      .church-location {
-        font-size: 12px;
-        letter-spacing: 1.2px;
-      }
-
-      .ornament {
-        margin: 23px auto;
-      }
-
-      h1 {
-        font-size: clamp(32px, 9vw, 43px);
-      }
-
-      .message {
-        font-size: 15px;
-      }
-
-      footer {
-        bottom: 18px;
-        left: 22px;
-        right: 22px;
-        flex-direction: column;
-        text-align: center;
-        font-size: 12px;
-        gap: 7px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thrikkunathu Sehiyon Jacobite Syrian Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <main class="page">
-    <div class="church-background" aria-hidden="true"></div>
-
-    <section class="content">
-      <div class="emblem" aria-hidden="true">✝</div>
-
-      <p class="malayalam" lang="ml">
-        തൃക്കുന്നത്ത് സെഹിയോൻ<br>
-        യാക്കോബായ സുറിയാനി പള്ളി, കുന്നക്കൽ
-      </p>
-
-      <p class="church-name">
-        Thrikkunathu Sehiyon
-      </p>
-
-      <p class="church-location">
-        JACOBITE SYRIAN CHURCH · KUNNACKAL
-      </p>
-
-      <div class="ornament" aria-hidden="true">
-        <span></span>✝<span></span>
+  <header>
+    <div class="top-strip">
+      <div class="container top-strip-inner">
+        <p>കുന്നക്കൽ സെഹിയോൻ ഇടവക നിങ്ങളെ സ്വാഗതം ചെയ്യുന്നു</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/thrikkunnathusehionchurchkunnackal/" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/kunnackal_sehiyon_palli/" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/watch?v=vTKUabllbGY" target="_blank" rel="noopener noreferrer"
+            aria-label="YouTube">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M21.582 6.186a2.506 2.506 0 0 0-1.764-1.774C18.258 4 12 4 12 4s-6.258 0-7.818.412a2.506 2.506 0 0 0-1.764 1.774C2 7.752 2 12 2 12s0 4.248.418 5.814a2.506 2.506 0 0 0 1.764 1.774C5.742 20 12 20 12 20s6.258 0 7.818-.412a2.506 2.506 0 0 0 1.764-1.774C22 16.248 22 12 22 12s0-4.248-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z" />
+            </svg>
+          </a>
+        </div>
       </div>
+    </div>
 
-      <div class="gear" aria-hidden="true">⚙</div>
+    <div class="nav-wrap">
+      <div class="container nav-inner">
+        <a class="brand" href="#">
+          <img class="logo-img" src="assets/images/logos/logo.png" alt="Church logo" />
+          <div>
+            <h1>THRIKKUNATHU SEHIYON<br /> JACOBITE SYRIAN CHURCH</h1>
+          </div>
+        </a>
+        <input class="menu-toggle" type="checkbox" id="menu-toggle" />
+        <label class="menu-btn" for="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="site-nav">
+          <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="administration.html">Administration</a></li>
+            <li><a href="organizations.html">Organizations</a></li>
+            <li><a href="chapel.html">Chapel</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-      <h1>Website Under Construction</h1>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="container hero-content">
+          <p class="welcome">Welcome to</p>
+          <h2>Thrikkunathu Sehiyon Jacobite Syrian Church</h2>
+          <p class="sub">
+            A Church rooted in Faith,<br />
+            Growing in Love, Serving in Hope.
+          </p>
+          <a href="about.html" class="btn-primary">Learn More →</a>
+        </div>
 
-      <p class="message">
-        We are preparing a new online home for our parish community.
-        Our website is coming soon.
-        <br>
-        Thank you for your patience, prayers and support.
-      </p>
+        <!-- Quick Info Floating Cards Over Hero -->
+        <div class="container hero-cards-wrap">
+          <div class="hero-cards-grid">
+            <!-- Card 1: Today's Bible Verse -->
+            <div class="hero-card">
+              <div class="hero-card-icon">📖</div>
+              <div class="hero-card-info">
+                <h4>Today's Bible Verse</h4>
+                <p class="verse-quote">"For where two or three gather in my name, there am I with them."</p>
+                <span class="verse-ref">— Matthew 18:20</span>
+              </div>
+            </div>
 
-      <div class="status">
-        <span class="status-dot"></span>
-        Something wonderful is coming
+            <!-- Card 2: Next Holy Qurbana -->
+            <div class="hero-card highlight-card">
+              <div class="hero-card-icon">✝️</div>
+              <div class="hero-card-info">
+                <h4>Next Holy Qurbana</h4>
+                <p class="qurbana-time">Every Sunday • 8:00 AM</p>
+                <span class="qurbana-loc">Main Church, Kunnackal</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Visit Us -->
+            <div class="hero-card">
+              <div class="hero-card-icon">📍</div>
+              <div class="hero-card-info">
+                <h4>Visit Us</h4>
+                <p class="visit-addr">Kunnackal, Muvattupuzha</p>
+                <span class="visit-dist">Ernakulam, Kerala</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-dots" aria-hidden="true">
+          <span></span>
+          <span class="active"></span>
+          <span></span>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <span><strong>Thrikkunathu Sehiyon Jacobite Syrian Church</strong></span>
-      <span>Kunnackal · Muvattupuzha · Kerala</span>
-    </footer>
+    <section class="about section-space">
+      <div class="container about-grid">
+        <div class="about-image"></div>
+        <div class="about-copy">
+          <p class="section-tag">Welcome to </p>
+          <h3>Thrikkunathu Sehiyon Church</h3>
+
+          <p>
+            Welcome to Thrikkunathu Sehiyon Jacobite Syrian Church, a vibrant community of faith rooted in the ancient
+            traditions of the Syrian Orthodox Church. Located in Kunnackal, our church serves as a spiritual home for
+            families and individuals seeking to deepen their relationship with God through worship, fellowship, and
+            service.
+          </p>
+          <p>
+            We are committed to preserving our rich heritage while embracing the challenges and opportunities of the
+            modern world. Our congregation is dedicated to living out the teachings of Christ in our daily lives,
+            fostering a welcoming environment for all who seek spiritual growth and community.
+          </p>
+          <a href="about.html" class="btn-outline">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mass section-space-light">
+      <div class="container">
+        <h3 class="center-title title-decor">Holy Mass Schedule</h3>
+        <div class="mass-grid">
+          <article class="mass-card">
+            <div class="mass-icon">
+              <img src="assets/images/icons/icon-cup.svg" alt="Holy Mass cup icon" />
+            </div>
+            <div>
+              <h4>Every Sunday</h4>
+              <p>Holy Mass</p>
+              <strong>8:00 AM at Church</strong>
+            </div>
+          </article>
+          <article class="mass-card">
+            <div class="mass-icon">
+              <img src="assets/images/icons/icon-cup.svg" alt="Holy Mass cup icon" />
+            </div>
+            <div>
+              <h4>Every 2nd Saturday</h4>
+              <p>Holy Mass</p>
+              <strong>7:00 AM at St. Mary's Chapel</strong>
+            </div>
+          </article>
+          <article class="mass-card">
+            <div class="mass-icon">
+              <img src="assets/images/icons/icon-church.svg" alt="Sunday School icon" />
+            </div>
+            <div>
+              <h4>Every Sunday</h4>
+              <p>Sunday School</p>
+              <strong>11:00 AM at Church</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mass-recording section-space">
+      <div class="container">
+        <h3 class="center-title title-decor">Saturday Holy Mass Recording</h3>
+        <p class="section-intro">
+          Watch the recording of the Holy Qurbana celebrated on Saturday.
+        </p>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/vTKUabllbGY?si=T7UiHOAAl0jmOkim"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="milestones section-space">
+      <div class="container">
+        <h3 class="center-title title-decor">Milestones</h3>
+
+        <div class="milestones-grid">
+          <article class="milestone-card">
+            <span class="milestone-step">01</span>
+            <div class="milestone-header">
+              <span class="milestone-year">1915–1931</span>
+              <h4>Initial Organization</h4>
+            </div>
+            <p>Initial organization and pursuit of formal recognition.</p>
+          </article>
+
+          <article class="milestone-card has-media">
+            <span class="milestone-step">02</span>
+            <div class="milestone-header">
+              <span class="milestone-year">1932 (1107 ME)</span>
+              <h4>Official Establishment</h4>
+            </div>
+            <p>Official establishment of St. George Jacobite Syrian Church.</p>
+            <div class="milestone-media">
+              <img src="assets/images/church/oldchurch.png" alt="Original Church Building (1932)" />
+              <span class="media-tag">Original Church (1932)</span>
+            </div>
+          </article>
+
+          <article class="milestone-card">
+            <span class="milestone-step">03</span>
+            <div class="milestone-header">
+              <span class="milestone-year">1932–2018</span>
+              <h4>Growth & Expansion</h4>
+            </div>
+            <p>Spiritual growth, community expansion, and decades of dedicated service.</p>
+          </article>
+
+          <article class="milestone-card has-media">
+            <span class="milestone-step">04</span>
+            <div class="milestone-header">
+              <span class="milestone-year">2019</span>
+              <h4>New Church Consecration</h4>
+            </div>
+            <p>Completion and consecration of our new church building.</p>
+            <div class="milestone-media">
+              <img src="assets/images/church/newchurch.png" alt="Newly Consecrated Church (2019)" />
+              <span class="media-tag">New Consecrated Church (2019)</span>
+            </div>
+          </article>
+
+          <article class="milestone-card current">
+            <span class="milestone-step">05</span>
+            <div class="milestone-header">
+              <span class="milestone-year current-tag">Today</span>
+              <h4>Pillar of Community</h4>
+            </div>
+            <p>A thriving pillar of community faith, worship, and spiritual guidance for generations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="people section-space">
+      <div class="container">
+        <h3 class="center-title title-decor">Our Leadership</h3>
+        <p class="section-intro">
+          Together in faith and service for the growth of our church and the
+          glory of God.
+        </p>
+        <div class="people-grid">
+          <article class="person-card">
+            <h5>Vicar</h5>
+            <div class="thumb thumb-vicar"></div>
+            <p>Rev. Fr. Jacob Molathu</p>
+          </article>
+          <!-- <article class="person-card">
+              <h5>Priest in Church</h5>
+              <div class="thumb thumb-priest"></div>
+              <p>Fr. Mathai</p>
+            </article> -->
+          <article class="person-card">
+            <h5>Trustee</h5>
+            <div class="thumb thumb-trustee-1"></div>
+            <p>Mathew K P</p>
+          </article>
+          <article class="person-card">
+            <h5>Trustee</h5>
+            <div class="thumb thumb-trustee-2"></div>
+            <p>V V Jose</p>
+          </article>
+          <article class="person-card">
+            <h5>Committee</h5>
+            <div class="thumb thumb-committee"></div>
+            <p>Church Committee Members</p>
+          </article>
+        </div>
+
+        <div class="section-link" style="text-align: center; margin-top: 2rem;">
+          <a href="administration.html" class="btn-outline">View Our Leadership →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapels-preview section-space">
+      <div class="container">
+        <h3 class="center-title title-decor">Chapel / Kurisumthotty</h3>
+        <p class="section-intro">Sacred spaces dedicated to prayer, worship, and spiritual communion.</p>
+        <div class="chapels-preview-grid">
+          <div class="chapel-preview-card">
+            <img src="assets/images/chapels/chapel-stmary.jpg" alt="St. Mary's Chapel" />
+            <h4>St. Mary's Chapel</h4>
+          </div>
+          <div class="chapel-preview-card">
+            <img src="assets/images/chapels/chapel-stgeorge.jpg" alt="Mar Gregorius Kurisumthotti" />
+            <h4>Mar Gregorius Kurisumthotty</h4>
+          </div>
+          <div class="chapel-preview-card">
+            <img src="assets/images/chapels/chapel-stthomas.jpg" alt="Mar Baselios Kurisumthotty" />
+            <h4>Mar Baselios Kurisumthotty</h4>
+          </div>
+        </div>
+        <div class="section-link">
+          <a href="chapel.html" class="btn-outline">View All Chapels →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="organizations-preview section-space-light">
+      <div class="container">
+        <h3 class="center-title title-decor">Spiritual Organizations</h3>
+        <p class="section-intro">Serving our community through faith, compassion, and dedicated ministry.</p>
+        <div class="orgs-preview-grid">
+          <div class="org-preview-card">
+            <img src="assets/images/organizations/vanitha-samajam.jpg" alt="Vanitha Samajam" />
+            <h4>Vanitha Samajam</h4>
+            <p>Women's Association</p>
+          </div>
+          <div class="org-preview-card">
+            <img src="assets/images/organizations/sunday-school.jpg" alt="Sunday School" />
+            <h4>Sunday School</h4>
+            <p>Faith Formation for Children</p>
+          </div>
+          <div class="org-preview-card">
+            <img src="assets/images/organizations/youth-association.jpg" alt="Youth Association" />
+            <h4>Youth Association</h4>
+            <p>Engaging Young Adults</p>
+          </div>
+          <div class="org-preview-card">
+            <img src="assets/images/organizations/family-units.jpg" alt="Family Units" />
+            <h4>Family Units</h4>
+            <p>Strengthening Family Bonds</p>
+          </div>
+          <div class="org-preview-card">
+            <img src="assets/images/organizations/choir.jpg" alt="Church Choir" />
+            <h4>Church Choir</h4>
+            <p>Liturgical Music & Praise</p>
+          </div>
+        </div>
+        <div class="section-link">
+          <a href="organizations.html" class="btn-outline">Learn More →</a>
+        </div>
+      </div>
+    </section>
+
+
   </main>
+
+  <footer>
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-about">
+          <h6>About Church</h6>
+          <p>
+            Thrikkunathu Sehiyon Jacobite Syrian Church, Kunnackal is rooted
+            in faith, growing in love and serving in hope.
+          </p>
+        </div>
+        <div class="footer-mass">
+          <h6>Holy Mass Timing</h6>
+          <p><span class="ficon ficon-contact">✚</span>Sunday - 8:00 AM</p>
+          <p><span class="ficon ficon-contact">✚</span>Sunday School - 11:00 AM</p>
+          <p><span class="ficon ficon-contact">⌂</span>2nd Saturday - 7:00 AM at St. Mary's Chapel</p>
+        </div>
+        <div class="footer-contact">
+          <h6>Contact Us</h6>
+          <p>
+            <span class="ficon ficon-contact">⌖</span>CTC, Kunnackal, Muvattupuzha,<br />
+            Ernakulam, Kerala
+          </p>
+          <p><span class="ficon ficon-contact">✆</span>0480 280xxxx</p>
+          <p><span class="ficon">✉</span><a
+              href="mailto:thrikunnathusehiyonchurch@gmail.com">thrikunnathusehiyonchurch@gmail.com</a></p>
+        </div>
+
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <img class="logo-img lg" src="assets/images/logos/logo.png" alt="Church logo" />
+          </div>
+          <!-- <p>THRIKKUNATHU SEHIYON JACOBITE SYRIAN CHURCH KUNNACKAL</p> -->
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/thrikkunnathusehionchurchkunnackal/" target="_blank"
+              rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/kunnackal_sehiyon_palli/" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/watch?v=vTKUabllbGY" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.582 6.186a2.506 2.506 0 0 0-1.764-1.774C18.258 4 12 4 12 4s-6.258 0-7.818.412a2.506 2.506 0 0 0-1.764 1.774C2 7.752 2 12 2 12s0 4.248.418 5.814a2.506 2.506 0 0 0 1.764 1.774C5.742 20 12 20 12 20s6.258 0 7.818-.412a2.506 2.506 0 0 0 1.764-1.774C22 16.248 22 12 22 12s0-4.248-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2024 Thrikkunathu Sehiyon Jacobite Syrian Church, Kunnackal. All
+      Rights Reserved.
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>
