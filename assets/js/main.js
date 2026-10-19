@@ -449,7 +449,7 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   7. Dynamic Holy Mass Schedule Calculator
+  7. Dynamic Holy Qurbana Schedule Calculator
    ========================================================================== */
 
 function initNextHolyMassCalculator() {
@@ -459,7 +459,7 @@ function initNextHolyMassCalculator() {
 
   const now = new Date();
 
-  // 1. Calculate Next Sunday 8:00 AM Mass (Main Church)
+  // 1. Calculate Next Sunday 8:00 AM Qurbana (Main Church)
   function getNextSundayMass(fromDate) {
     const d = new Date(fromDate);
     const day = d.getDay();
@@ -475,12 +475,12 @@ function initNextHolyMassCalculator() {
     }
     return {
       date: nextSunday,
-      title: 'Holy Mass (Sunday)',
+      title: 'Holy Qurbana (Sunday)',
       location: 'Main Church, Kunnackal'
     };
   }
 
-  // 2. Calculate 2nd Saturday 7:00 AM Mass (St. Mary's Chapel)
+  // 2. Calculate 2nd Saturday 7:00 AM Qurbana (St. Mary's Chapel)
   function getSecondSaturday(year, month) {
     // 2nd Saturday falls between 8th and 14th of the month
     for (let day = 8; day <= 14; day++) {
@@ -507,7 +507,7 @@ function initNextHolyMassCalculator() {
     }
     return {
       date: satDate,
-      title: 'Holy Mass (2nd Sat)',
+      title: 'Holy Qurbana (2nd Sat)',
       location: "St. Mary's Chapel"
     };
   }
