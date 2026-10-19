@@ -236,10 +236,12 @@ function initHeroSlider() {
   ];
 
   let currentIdx = 0;
+  const mobileCardOrder = [1, 0, 2];
   const dotsContainer = heroSection.querySelector('.slider-dots');
   const heroContent = heroSection.querySelector('.hero-content');
   const heroTitle = heroSection.querySelector('.hero-content h2');
   const heroSub = heroSection.querySelector('.hero-content .sub');
+  const infoCards = heroSection.querySelectorAll('.hero-card');
 
   if (!dotsContainer) return;
 
@@ -252,10 +254,15 @@ function initHeroSlider() {
   });
 
   const dots = dotsContainer.querySelectorAll('span');
+  infoCards[mobileCardOrder[currentIdx]]?.classList.add('mobile-slide-card');
 
   function goToSlide(index) {
     currentIdx = index;
     const slide = slides[index];
+
+    infoCards.forEach((card, cardIndex) => {
+      card.classList.toggle('mobile-slide-card', cardIndex === mobileCardOrder[index]);
+    });
 
     if (heroContent) {
       heroContent.classList.add('text-animating');
@@ -282,7 +289,7 @@ function initHeroSlider() {
   heroSection.addEventListener('mouseleave', () => {
     slideInterval = setInterval(() => {
       goToSlide((currentIdx + 1) % slides.length);
-    }, 6000);
+    }, 3000);
   });
 }
 

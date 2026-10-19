@@ -2458,6 +2458,7 @@ h3 {
 
   .hero-overlay {
     background: linear-gradient(to right, rgba(24, 20, 16, 0.78), rgba(24, 20, 16, 0.2));
+    padding-bottom: 0;
   }
 
   .welcome {
@@ -2616,13 +2617,17 @@ h3 {
   }
 
   .hero-cards-wrap {
-    margin-top: auto;
-    margin-bottom: 0.8rem;
+    position: absolute;
+    right: 0;
+    bottom: 2.25rem;
+    left: 0;
+    margin: 0 auto;
     padding-inline: 0.5rem;
   }
 
   .hero-cards-grid {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
   }
@@ -2636,8 +2641,30 @@ h3 {
     border-radius: 10px;
   }
 
-  .hero-card:not(.highlight-card) {
+  .hero-card:not(.mobile-slide-card) {
     display: none;
+  }
+
+  .hero-card.mobile-slide-card {
+    animation: mobile-hero-card-enter 0.35s ease both;
+  }
+
+  @keyframes mobile-hero-card-enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-card.mobile-slide-card {
+      animation: none;
+    }
   }
 
   .hero-card-icon {
