@@ -1041,7 +1041,7 @@ h3 {
 }
 
 .thumb-committee-9 {
-  background-image: url("assets/images/people/committee-member8.jpg");
+  background-image: url("assets/images/people/committee-member9.jpg");
 }
 
 .thumb-committee-10 {
@@ -1057,7 +1057,12 @@ h3 {
 }
 
 .thumb-advisory-committee-3 {
-  background-image: url("assets/images/people/advisory-committee-member3.jpg");
+  background-image: url("assets/images/people/advisory-committee-member3.png");
+}
+
+.thumb-headmaster {
+  background-image: url("assets/images/people/sunday-school-headmaster.png");
+  background-position: top center;
 }
 
 .thumb-kappiyar-1 {
@@ -2766,7 +2771,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .facility-info {
@@ -2983,8 +2988,15 @@ h3 {
 }
 
 @keyframes lbFade {
-  from { opacity: 0; transform: scale(0.97); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .lightbox-nav-btn {
@@ -3040,15 +3052,24 @@ h3 {
     height: 40px;
     font-size: 1.2rem;
   }
-  .lightbox-prev { left: 4px; }
-  .lightbox-next { right: 4px; }
+
+  .lightbox-prev {
+    left: 4px;
+  }
+
+  .lightbox-next {
+    right: 4px;
+  }
+
   .timeline-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 0.85rem;
   }
+
   .timeline-item {
     aspect-ratio: 1 / 1;
   }
+
   .timeline-filter-bar {
     width: 100%;
     overflow-x: auto;
